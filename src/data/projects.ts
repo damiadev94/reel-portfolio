@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "Arañitas en Invierno",
     category: "Flebología",
     description: "Descubre cómo las arañitas pueden ayudarte a mejorar tu salud vascular en el invierno.",
-    videoUrl: "../../public/videos/arañitas-invierno-1.mp4",
+    videoUrl: "https://jumpshare.com/share/35GXF5ltXFkkDODTi4xX",
     poster: "",
   },
   {
