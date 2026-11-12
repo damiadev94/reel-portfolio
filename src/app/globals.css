@@ -37,7 +37,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--lime); outline-
 /* Hero */
 .hero { padding-top: 112px; display: grid; grid-template-columns: 1fr 190px; column-gap: 60px; }
 .hero-main { min-width: 0; }
-.eyebrow, .kicker, .hero-meta, .aside-caption, .project-number, .empty-poster, .poster-label, .project-category, .placeholder-note, .footer, .modal-caption > span { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; }
+.eyebrow, .kicker, .hero-meta, .aside-caption, .project-category, .placeholder-note, .footer { font-family: var(--mono); font-size: 9px; letter-spacing: 1px; }
 .eyebrow { color: #a8afa3; display: flex; align-items: center; gap: 10px; }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 13px #c7f36b80; }
 .eyebrow-divider { color: #596052; }
@@ -66,18 +66,11 @@ h2 { font-size: clamp(42px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -.0
 .muted { color: #626a5e; }
 .section-heading > p { color: #969e91; font-size: 11px; line-height: 1.9; margin: 0 0 5px; }
 .project-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 38px 22px; margin-top: 48px; }
-.project-card { justify-self: center; width: 100%; max-width: 260px; padding: 0; border: 0; background: none; color: inherit; text-align: left; cursor: pointer; min-width: 0; }
+.project-card { display: block; justify-self: center; width: 100%; max-width: 260px; min-width: 0; color: inherit; text-align: left; }
 .project-visual { width: 100%; aspect-ratio: 9 / 16; overflow: hidden; position: relative; border: 1px solid #30372b; background-color: #141711; background-size: cover; background-position: center; display: grid; place-items: center; isolation: isolate; transition: border-color .25s ease, transform .25s ease, background-color .25s ease; }
 .project-card:hover .project-visual { border-color: var(--lime); transform: translateY(-4px); }
-.project-preview { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; }
+.project-embed { position: absolute; inset: 0; display: block; width: 100%; height: 100%; border: 0; background: #080908; }
 .project-visual::before { content: ''; position: absolute; inset: 8px; border: 1px solid #ffffff0d; pointer-events: none; z-index: -1; }
-.project-number { position: absolute; z-index: 1; top: 15px; left: 15px; color: #a4ad98; font-size: 8px; }
-.empty-poster { display: flex; flex-direction: column; align-items: center; gap: 13px; color: #9da594; font-size: 8px; letter-spacing: 1.2px; }
-.empty-plus { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #647354; border-radius: 50%; color: var(--lime); font-family: var(--sans); font-size: 23px; font-weight: 300; transition: background .2s ease, color .2s ease; }
-.project-card:hover .empty-plus { background: var(--lime); color: #11140d; }
-.empty-poster small { color: #626c5b; font-size: 7px; }
-.poster-label { position: absolute; z-index: 1; left: 15px; bottom: 15px; color: white; font-size: 8px; }
-.project-open { position: absolute; z-index: 1; right: 13px; top: 12px; width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid #ffffff35; border-radius: 50%; color: white; font-size: 13px; background: #08090840; opacity: .75; }
 .project-info { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; }
 .project-category { display: block; color: #788071; text-transform: uppercase; font-size: 7px; margin-bottom: 7px; }
 .project-info h3 { margin: 0; color: #e5e9df; font-size: 13px; font-weight: 600; letter-spacing: -.02em; }
@@ -112,20 +105,6 @@ h2 { font-size: clamp(42px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -.0
 .primary-contact { border-bottom-color: var(--lime); }
 .footer { min-height: 88px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #778071; font-size: 8px; }
 .footer-brand { color: var(--text); }
-
-/* Reel viewer */
-.modal-backdrop { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 22px; background: #000d; backdrop-filter: blur(9px); }
-.modal { width: min(560px, 100%); max-height: 94vh; overflow-y: auto; position: relative; padding: 18px; border: 1px solid #414a38; background: #11130f; }
-.modal-close { position: absolute; top: 27px; right: 27px; z-index: 2; width: 34px; height: 34px; border: 1px solid #ffffff60; border-radius: 50%; background: #080908d9; color: white; font-size: 23px; line-height: 1; cursor: pointer; }
-.modal-screen { width: min(100%, 330px); aspect-ratio: 9 / 16; max-height: 68vh; margin: 0 auto; overflow: hidden; display: grid; place-items: center; background: #080908; }
-.modal-screen video { width: 100%; height: 100%; object-fit: contain; }
-.modal-empty { display: grid; justify-items: center; gap: 17px; padding: 25px; text-align: center; }
-.modal-empty strong { color: #ecf0e7; font-size: 14px; font-weight: 600; }
-.modal-empty p { color: #a0a897; font-size: 10px; line-height: 1.9; }
-.modal-empty code { color: var(--lime); font-family: var(--mono); font-size: 9px; }
-.modal-caption { display: flex; justify-content: space-between; align-items: end; gap: 20px; padding-top: 17px; }
-.modal-caption h3 { margin: 7px 0 0; font-size: 15px; }
-.modal-caption > span { color: #8c9681; }
 
 @media (max-width: 1050px) {
   .shell { width: min(100% - 48px, 900px); }
@@ -172,11 +151,6 @@ h2 { font-size: clamp(42px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -.0
   .section-heading > p { margin-top: 17px; }
   .project-grid { gap: 27px 13px; margin-top: 31px; }
   .project-card { max-width: none; }
-  .project-number { top: 10px; left: 10px; font-size: 7px; }
-  .project-open { top: 8px; right: 8px; width: 23px; height: 23px; font-size: 11px; }
-  .empty-poster { gap: 9px; font-size: 7px; letter-spacing: .7px; }
-  .empty-plus { width: 34px; height: 34px; font-size: 19px; }
-  .empty-poster small { font-size: 6px; }
   .project-info { padding-top: 11px; }
   .project-info h3 { font-size: 11px; }
   .project-category { font-size: 6px; letter-spacing: .6px; }
@@ -190,9 +164,6 @@ h2 { font-size: clamp(42px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -.0
   .contact-actions { width: 100%; }
   .footer { min-height: 76px; flex-wrap: wrap; padding-block: 18px; font-size: 7px; letter-spacing: .3px; }
   .footer > span { display: none; }
-  .modal-backdrop { padding: 12px; }
-  .modal { padding: 12px; }
-  .modal-screen { max-height: 70vh; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

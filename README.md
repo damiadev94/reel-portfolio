@@ -26,28 +26,28 @@ El portfolio ya incluye:
 - Teléfono: +54 11 2819-7638
 - Contacto directo por WhatsApp
 
-## Agregar tus reels
-Los ocho espacios de la galería están vacíos para que agregues tus propios trabajos. No contienen videos ficticios.
+## Videos embebidos desde Jumpshare
 
-1. Copiá cada video MP4 en `public/videos/`.
-2. Abrí `src/data/projects.ts`.
-3. En el espacio correspondiente, reemplazá el título, la categoría y la descripción.
-4. Completá `videoUrl` con la ruta del archivo. Ejemplo: `videoUrl: "/videos/reel-01.mp4"`.
-5. Opcionalmente, agregá una imagen de portada en `public/posters/` y asigná `poster: "/posters/reel-01.jpg"`.
+La galería ya contiene ocho videos embebidos mediante sus iframes de Jumpshare. Cada iframe se adapta al marco vertical **9:16** del portfolio y se carga de forma diferida (`loading="lazy"`) para evitar cargar todos los reproductores antes de que el visitante llegue a la galería.
 
-Ejemplo de un proyecto:
+Para reemplazar uno de los videos:
+1. Abrí `src/data/projects.ts`.
+2. Buscá el proyecto que querés actualizar.
+3. Reemplazá su propiedad `embedUrl` por la URL de inserción de Jumpshare, con formato `https://jumpshare.com/embed/ID`.
+4. Editá `title`, `category` y `description` para mostrar la información del trabajo.
+
+Ejemplo:
 ```ts
 {
   id: "01",
   title: "Campaña de producto",
   category: "Publicidad",
   description: "Edición vertical para una campaña de producto.",
-  videoUrl: "/videos/reel-01.mp4",
-  poster: "/posters/reel-01.jpg"
+  embedUrl: "https://jumpshare.com/embed/ID_DEL_VIDEO"
 }
 ```
 
-Los marcos de la galería y el visor de cada proyecto mantienen la proporción vertical 9:16. Los videos se reproducen en el visor al abrir cada tarjeta.
+Los reproductores se muestran directamente dentro de la galería, sin abrir un modal. El contenedor conserva la proporción **9:16** en escritorio y móviles. El contenido del iframe depende de que el video y su enlace de inserción sigan disponibles en Jumpshare.
 
 ## Validar el proyecto
 ```bash
@@ -74,6 +74,6 @@ src/
   data/
     projects.ts
 public/
-  videos/
-  posters/
+  videos/ (opcional, si decidís alojar MP4 localmente en el futuro)
+  posters/ (opcional)
 ```

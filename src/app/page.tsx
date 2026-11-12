@@ -1,28 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { projects, type Project } from "@/data/projects";
+import { projects } from "@/data/projects";
 
 const email = "damian_l@hotmail.es";
 const phone = "+54 11 2819-7638";
 const whatsappUrl = "https://wa.me/541128197638?text=Hola%20Dami%C3%A1n%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20consultarte%20por%20una%20edici%C3%B3n.";
 
 export default function Home() {
-  const [active, setActive] = useState<Project | null>(null);
-
-  useEffect(() => {
-    if (!active) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActive(null);
-    };
-    document.addEventListener("keydown", closeOnEscape);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", closeOnEscape);
-      document.body.style.overflow = "";
-    };
-  }, [active]);
-
   return (
     <main id="inicio">
       <nav className="nav shell" aria-label="Navegación principal">
@@ -65,22 +47,25 @@ export default function Home() {
 
         <div className="project-grid">
           {projects.map((project) => (
-            <button className="project-card" key={project.id} onClick={() => setActive(project)} aria-label={`Abrir espacio para ${project.title}`}>
-              <div className="project-visual" style={project.poster ? { backgroundImage: `linear-gradient(180deg, #08090800 45%, #080908bf 100%), url("${project.poster}")` } : undefined}>
-                {project.videoUrl && <video className="project-preview" src={project.videoUrl} poster={project.poster || undefined} muted playsInline preload="metadata" aria-hidden="true" />}
-                <span className="project-number">REEL / {project.id}</span>
-                {!project.videoUrl && !project.poster && <div className="empty-poster"><span className="empty-plus">+</span><span>AGREGAR VIDEO</span><small>FORMATO 9:16</small></div>}
-                {project.poster && !project.videoUrl && <span className="poster-label">PORTADA · {project.id}</span>}
-                <span className="project-open" aria-hidden="true">↗</span>
+            <article className="project-card" key={project.id}>
+              <div className="project-visual">
+                <iframe
+                  className="project-embed"
+                  src={project.embedUrl}
+                  title={`Reel ${project.id} — ${project.title}`}
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
               <div className="project-info">
                 <div><span className="project-category">{project.category}</span><h3>{project.title}</h3></div>
-                <span className="project-arrow">↗</span>
+                <span className="project-arrow" aria-hidden="true">↗</span>
               </div>
-            </button>
+            </article>
           ))}
         </div>
-        <p className="placeholder-note"><span>+</span> Ocho espacios editables. Reemplazá los datos de ejemplo y cargá tus videos cuando quieras.</p>
+        <p className="placeholder-note"><span>↗</span> Ocho reels embebidos desde Jumpshare. Los videos se reproducen directamente en su marco vertical.</p>
       </section>
 
       <section className="services-section" id="servicios">
@@ -121,21 +106,6 @@ export default function Home() {
         <a href="#inicio">VOLVER ARRIBA ↑</a>
       </footer>
 
-      {active && (
-        <div className="modal-backdrop" role="presentation" onClick={() => setActive(null)}>
-          <div className="modal" role="dialog" aria-modal="true" aria-label={active.title} onClick={(event) => event.stopPropagation()}>
-            <button className="modal-close" onClick={() => setActive(null)} aria-label="Cerrar">×</button>
-            <div className="modal-screen">
-              {active.videoUrl ? (
-                <video src={active.videoUrl} poster={active.poster || undefined} controls autoPlay playsInline />
-              ) : (
-                <div className="modal-empty"><span className="empty-plus">+</span><strong>Tu próximo reel va acá.</strong><p>Agregá la ruta del video en <code>src/data/projects.ts</code>.<br />Usá un archivo MP4 vertical en formato 9:16.</p></div>
-              )}
-            </div>
-            <div className="modal-caption"><div><span className="kicker">REEL {active.id} · {active.category}</span><h3>{active.title}</h3></div><span>9:16</span></div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
