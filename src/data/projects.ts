@@ -16,7 +16,7 @@ export const projects: Project[] = [
     title: "Arañitas en Invierno",
     category: "Flebología",
     description: "Descubre cómo las arañitas pueden ayudarte a mejorar tu salud vascular en el invierno.",
-    videoUrl: "https://jumpshare.com/share/35GXF5ltXFkkDODTi4xX",
+    videoUrl: "https://jumpshare.com/embed/35GXF5ltXFkkDODTi4xX",
     poster: "",
   },
   {
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Cuando 4 no alcanzan.",
     category: "Flebología",
     description: "Aprende a identificar los signos de insuficiencia venosa y cómo prevenirla.",
-    videoUrl: "https://cdn.jumpshare.com/preview/0RnqsS0J4FoeVMrPFDM4XlQLg3Y6pdzUW50GiegHQ0vWyvLIFNEvBXCdS7kvImenEHermoec7qh67xyx6Wr_d8KWlzsbH8oW4SUD3HubEucdG2KmiEuohZDD2Ra_3n1ybYA4aEyeD3zl2cG5_oQXyn9d_6z5S4F4FEWxf4VNcMk-jtLDez1CmKkPH.mp4",
+    videoUrl: "https://jumpshare.com/embed/Fkl7lYs9bXDQkMfpcsaA",
     poster: "",
   },
   {
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "Curar la Onicomicosis",
     category: "Podologia",
     description: "Descubre los tratamientos más efectivos para curar la onicomicosis y mantener tus uñas saludables.",
-    videoUrl: "../../public/videos/Copia de curar la onicomicosis.mp4",
+    videoUrl: "https://jumpshare.com/embed/QIzgGnxxjizg9MgSJj2h",
     poster: "",
   },
   {
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     title: "Presentación de Sofía",
     category: "Estética",
     description: "Conoce a Sofía, nuestra especialista en estética, y descubre cómo puede ayudarte a resaltar tu belleza natural.",
-    videoUrl: "../../public/videos/Copia de sofia-jueves.mp4",
+    videoUrl: "https://jumpshare.com/embed/9YtsVzXMo3i4OIAgFHBS",
     poster: "",
   },
   {
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "Trigliceridos Altos",
     category: "Cardiología",
     description: "Aprende a controlar tus triglicéridos y mantener un corazón saludable con nuestros consejos y tratamientos especializados.",
-    videoUrl: "../../public/videos/DRA LO 1.mp4",
+    videoUrl: "https://jumpshare.com/embed/nuXGWU219ZZsJyIIYwGb",
     poster: "",
   },
   {
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "La Sal que Usas Hoy.",
     category: "Cardiología",
     description: "Descubre cómo la sal que consumes a diario puede afectar tu salud cardiovascular y aprende a reducir su consumo de manera efectiva.",
-    videoUrl: "../../public/videos/Reel1lasalqueusashoyya.mp4",
+    videoUrl: "https://jumpshare.com/embed/Xcb2DVITPi8CqtXC5Ikj",
     poster: "",
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     title: "App de Negocio de Lavado a Domicilio",
     category: "Apps",
     description: "",
-    videoUrl: "../../public/videos/VIDEO 3 KARLOOK.mp4",
+    videoUrl: "https://jumpshare.com/embed/hrZE7t0vtbJOHjiMBU4d",
     poster: "",
   },
   {
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     title: "Breve Historia de las Várices.",
     category: "Flebología",
     description: "Descubre la historia de las várices y cómo pueden afectar tu salud vascular.",
-    videoUrl: "../../public/videos/video-historia-varices-1.mp4",
+    videoUrl: "https://jumpshare.com/embed/0Kv5wWYjb6ZZZnFxl4Os",
     poster: "",
   },
 ];
