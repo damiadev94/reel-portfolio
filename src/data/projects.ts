@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Cuando 4 no alcanzan.",
     category: "Flebología",
     description: "Aprende a identificar los signos de insuficiencia venosa y cómo prevenirla.",
-    videoUrl: "../../public/videos/Copia de cuando-4-no-alcanzan.mp4",
+    videoUrl: "https://cdn.jumpshare.com/preview/0RnqsS0J4FoeVMrPFDM4XlQLg3Y6pdzUW50GiegHQ0vWyvLIFNEvBXCdS7kvImenEHermoec7qh67xyx6Wr_d8KWlzsbH8oW4SUD3HubEucdG2KmiEuohZDD2Ra_3n1ybYA4aEyeD3zl2cG5_oQXyn9d_6z5S4F4FEWxf4VNcMk-jtLDez1CmKkPH.mp4",
     poster: "",
   },
   {
